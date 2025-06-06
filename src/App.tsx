@@ -37,19 +37,19 @@ function App() {
 
   useEffect(() => {
     // Cargar datos de biografía
-    fetch('/data/kant_biografia_detallada.json')
+    fetch('./data/kant_biografia_detallada.json')
       .then(res => res.json())
       .then(data => setBiographyData(data.biography))
       .catch(err => console.error('Error loading biography:', err))
 
     // Cargar conceptos filosóficos
-    fetch('/data/kant_imperativo_categorico_citas.json')
+    fetch('./data/kant_imperativo_categorico_citas.json')
       .then(res => res.json())
       .then(data => setPhilosophicalConcepts(data.kantian_concepts))
       .catch(err => console.error('Error loading philosophical concepts:', err))
 
     // Cargar datos de obras
-    fetch('/data/kant_obras_completas.json')
+    fetch('./data/kant_obras_completas.json')
       .then(res => res.json())
       .then(data => setWorksData(data))
       .catch(err => console.error('Error loading works:', err))
@@ -152,7 +152,7 @@ function App() {
             <div className="space-y-6">
               <div className="relative">
                 <img
-                  src="/images/kant_portrait_becker_1768.jpg"
+                  src="./images/kant_portrait_becker_1768.jpg"
                   alt="Retrato de Immanuel Kant por Johann Gottlieb Becker, 1768"
                   className="w-full rounded-2xl shadow-2xl"
                 />
@@ -168,12 +168,12 @@ function App() {
               
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/kant_portrait_1790.jpg"
+                  src="./images/kant_portrait_1790.jpg"
                   alt="Kant en 1790"
                   className="w-full rounded-lg shadow-lg"
                 />
                 <img
-                  src="/images/kant_bust_hagemann.jpg"
+                  src="./images/kant_bust_hagemann.jpg"
                   alt="Busto de Kant"
                   className="w-full rounded-lg shadow-lg"
                 />
@@ -629,12 +629,12 @@ function App() {
 
             <div className="space-y-6">
               <img
-                src="/images/konigsberg_historical.jpg"
+                src="./images/konigsberg_historical.jpg"
                 alt="Königsberg histórica"
                 className="w-full rounded-2xl shadow-2xl"
               />
               <img
-                src="/images/german_enlightenment.jpg"
+                src="./images/german_enlightenment.jpg"
                 alt="Ilustración alemana"
                 className="w-full rounded-xl shadow-lg"
               />
