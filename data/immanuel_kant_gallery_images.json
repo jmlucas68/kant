@@ -1,0 +1,134 @@
+📄  Extracted from page
+: ```json
+{
+  "file_name": "immanuel_kant_gallery_images.json",
+  "extraction_goal": "Extract all direct links to images in the gallery section, including portraits, busts, engravings, and other high-quality images of Immanuel Kant with their descriptions and file information",
+  "gallery_images": [
+    {
+      "title": "Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Kant5.jpg/120px-Kant5.jpg",
+      "full_size_link": "/wiki/File:Kant5.jpg",
+      "description": "Immanuel Kant",
+      "type": "portrait"
+    },
+    {
+      "title": "Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Kant_-_SIL14-K001-05a.jpg/120px-Kant_-_SIL14-K001-05a.jpg",
+      "full_size_link": "/wiki/File:Kant_-_SIL14-K001-05a.jpg",
+      "description": "Immanuel Kant",
+      "type": "portrait"
+    },
+    {
+      "title": "Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kant_SIL14-k001-06a.jpg/120px-Kant_SIL14-k001-06a.jpg",
+      "full_size_link": "/wiki/File:Kant_SIL14-k001-06a.jpg",
+      "description": "Immanuel Kant",
+      "type": "portrait"
+    },
+    {
+      "title": "Bust (after Friedrich Hagemann, 1801)",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Berlin_Friedrichswerdersche_Kirche_Kant.jpg/120px-Berlin_Friedrichswerdersche_Kirche_Kant.jpg",
+      "full_size_link": "/wiki/File:Berlin_Friedrichswerdersche_Kirche_Kant.jpg",
+      "description": "Bust (after Friedrich Hagemann, 1801)",
+      "type": "bust"
+    },
+    {
+      "title": "Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Immanuel_Kant.jpg/120px-Immanuel_Kant.jpg",
+      "full_size_link": "/wiki/File:Immanuel_Kant.jpg",
+      "description": "Immanuel Kant",
+      "type": "portrait"
+    },
+    {
+      "title": "Paint from the left on german stamp for 250 years of birth",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/DBP_-_250_Jahre_Immanuel_Kant_-_90_Pfennig_-_1974.jpg/120px-DBP_-_250_Jahre_Immanuel_Kant_-_90_Pfennig_-_1974.jpg",
+      "full_size_link": "/wiki/File:DBP_-_250_Jahre_Immanuel_Kant_-_90_Pfennig_-_1974.jpg",
+      "description": "Paint from the left on german stamp for 250 years of birth",
+      "type": "stamp"
+    },
+    {
+      "title": "Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Immanuel_Kant_2.jpg/120px-Immanuel_Kant_2.jpg",
+      "full_size_link": "/wiki/File:Immanuel_Kant_2.jpg",
+      "description": "Immanuel Kant",
+      "type": "portrait"
+    },
+    {
+      "title": "Portrait of Immanuel Kant by Johann Gottlieb Becker, 1768",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Immanuel_Kant_-_Gemaelde_1.jpg/120px-Immanuel_Kant_-_Gemaelde_1.jpg",
+      "full_size_link": "/wiki/File:Immanuel_Kant_-_Gemaelde_1.jpg",
+      "description": "Portrait of Immanuel Kant by Johann Gottlieb Becker, 1768",
+      "special_designation": "Valued images",
+      "type": "portrait",
+      "artist": "Johann Gottlieb Becker",
+      "year": "1768"
+    },
+    {
+      "title": "Painted portrait of Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Immanuel_Kant_portrait_c1790.jpg/120px-Immanuel_Kant_portrait_c1790.jpg",
+      "full_size_link": "/wiki/File:Immanuel_Kant_portrait_c1790.jpg",
+      "description": "Painted portrait of Immanuel Kant",
+      "type": "portrait",
+      "circa_year": "1790"
+    },
+    {
+      "title": "Engraving of Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Immanuel_Kant_%28portrait%29.jpg/120px-Immanuel_Kant_%28portrait%29.jpg",
+      "full_size_link": "/wiki/File:Immanuel_Kant_(portrait).jpg",
+      "description": "Engraving of Immanuel Kant",
+      "type": "engraving"
+    },
+    {
+      "title": "Immanuel Kant and guests",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Kant_doerstling2.jpg/120px-Kant_doerstling2.jpg",
+      "full_size_link": "/wiki/File:Kant_doerstling2.jpg",
+      "description": "Immanuel Kant and guests",
+      "type": "group_scene"
+    },
+    {
+      "title": "New copy of the (destroyed) statue by Christian Daniel Rauch of 1864 in Kaliningrad",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Kant_Kaliningrad.jpg/120px-Kant_Kaliningrad.jpg",
+      "full_size_link": "/wiki/File:Kant_Kaliningrad.jpg",
+      "description": "New copy of the (destroyed) statue by Christian Daniel Rauch of 1864 in Kaliningrad, (Sponsored by Marion Gräfin Dönhoff)",
+      "type": "statue",
+      "sculptor": "Christian Daniel Rauch",
+      "original_year": "1864",
+      "location": "Kaliningrad",
+      "sponsor": "Marion Gräfin Dönhoff"
+    },
+    {
+      "title": "Kant with some others under the horse's ass in Berlin",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Unter_dem_Popo-Mutter_Erde_fec.jpg/120px-Unter_dem_Popo-Mutter_Erde_fec.jpg",
+      "full_size_link": "/wiki/File:Unter_dem_Popo-Mutter_Erde_fec.jpg",
+      "description": "Kant with some others under the horse's ass in Berlin, see Reiterstandbild Friedrichs des Großen",
+      "type": "statue_detail",
+      "location": "Berlin",
+      "related_monument": "Reiterstandbild Friedrichs des Großen"
+    },
+    {
+      "title": "SVG portrait Immanuel Kant",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Svg_portrait_Immanuel_Kant.svg/120px-Svg_portrait_Immanuel_Kant.svg.png",
+      "full_size_link": "/wiki/File:Svg_portrait_Immanuel_Kant.svg",
+      "description": "SVG portrait of Immanuel Kant",
+      "type": "svg_illustration"
+    }
+  ],
+  "total_images": 15,
+  "image_types": {
+    "portraits": 6,
+    "bust": 1,
+    "engraving": 1,
+    "stamp": 1,
+    "group_scene": 1,
+    "statue": 1,
+    "statue_detail": 1,
+    "svg_illustration": 1
+  },
+  "notable_features": [
+    "One image is designated as a 'Valued image' (Portrait by Johann Gottlieb Becker, 1768)",
+    "Images span different time periods and artistic styles",
+    "Includes both contemporary portraits and modern commemorative works",
+    "Features various media types: paintings, engravings, sculptures, stamps, and digital illustrations"
+  ]
+}
+```
