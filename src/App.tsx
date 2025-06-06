@@ -34,6 +34,7 @@ function App() {
   const [philosophicalConcepts, setPhilosophicalConcepts] = useState<KantianConcepts>({})
   const [worksData, setWorksData] = useState<WorksData | null>(null)
   const [activeSection, setActiveSection] = useState('introduction')
+  // Cache fix timestamp: 2025-01-06-16:12
 
   useEffect(() => {
     // Cargar datos de biografía
@@ -813,3 +814,4 @@ function App() {
 }
 
 export default App
+console.log('Cache invalidation: Sat Jun  7 00:18:16 CST 2025');
