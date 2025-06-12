@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría del Conocimiento de Kant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+        }
+
+        .revolution-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(252, 182, 159, 0.3);
+        }
+
+        .knowledge-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .knowledge-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 6px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .knowledge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .a-priori { border-color: #e74c3c; }
+        .a-posteriori { border-color: #3498db; }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .faculties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .faculty-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: scale(1.05);
+        }
+
+        .faculty-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .synthesis-diagram {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(255, 154, 158, 0.3);
+        }
+
+        .synthesis-title {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .synthesis-formula {
+            font-size: 1.8rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .concept-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .phenomenal { border-color: #9b59b6; }
+        .noumenal { border-color: #e67e22; }
+
+        .concept-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .limits-section {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(255, 234, 167, 0.4);
+        }
+
+        .limits-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(168, 237, 234, 0.3);
+        }
+
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .knowledge-types,
+            .faculties-grid,
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Immanuel Kant</h1>
+            <div class="subtitle">Teoría del Conocimiento</div>
+        </div>
+
+        <div class="main-content">
+            <!-- Revolución Copernicana -->
+            <div class="section">
+                <div class="revolution-section">
+                    <h2 class="section-title">La Revolución Copernicana</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: center; color: #2c3e50;">
+                        <strong>Kant propone un giro radical:</strong> No es nuestro conocimiento el que se adapta a los objetos, 
+                        sino que <strong>los objetos se adaptan a nuestro conocimiento</strong>. 
+                        La mente humana no es pasiva, sino que <strong>estructura activamente la experiencia</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tipos de Conocimiento -->
+            <div class="section">
+                <h2 class="section-title">Tipos de Conocimiento</h2>
+                <div class="knowledge-types">
+                    <div class="knowledge-card a-priori">
+                        <h3 class="card-title">Conocimiento A Priori</h3>
+                        <p><strong>Independiente de la experiencia</strong></p>
+                        <p>• Universal y necesario</p>
+                        <p>• Matemáticas y lógica</p>
+                        <p>• Principios puros del entendimiento</p>
+                        <p><em>Ejemplo: "7 + 5 = 12"</em></p>
+                    </div>
+                    
+                    <div class="knowledge-card a-posteriori">
+                        <h3 class="card-title">Conocimiento A Posteriori</h3>
+                        <p><strong>Depende de la experiencia</strong></p>
+                        <p>• Contingente y particular</p>
+                        <p>• Conocimiento empírico</p>
+                        <p>• Requiere verificación sensorial</p>
+                        <p><em>Ejemplo: "El agua hierve a 100°C"</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Síntesis Trascendental -->
+            <div class="section">
+                <div class="synthesis-diagram">
+                    <h2 class="synthesis-title">La Síntesis Trascendental</h2>
+                    <div class="synthesis-formula">
+                        INTUICIÓN + CONCEPTO = CONOCIMIENTO
+                    </div>
+                    <p style="color: #2c3e50; font-size: 1.1rem; line-height: 1.6;">
+                        El conocimiento surge de la <strong>síntesis</strong> entre las intuiciones sensibles 
+                        (lo que percibimos) y los conceptos del entendimiento (cómo organizamos mentalmente).
+                        <br><br>
+                        <em>"Las intuiciones sin conceptos son ciegas; los conceptos sin intuiciones son vacíos"</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Facultades del Conocimiento -->
+            <div class="section">
+                <h2 class="section-title">Las Tres Facultades del Conocimiento</h2>
+                <div class="faculties-grid">
+                    <div class="faculty-card">
+                        <h3 class="faculty-title">SENSIBILIDAD</h3>
+                        <p>Receptividad pasiva</p>
+                        <p>Intuiciones puras:</p>
+                        <p><strong>Espacio y Tiempo</strong></p>
+                        <p>Formas a priori de la intuición</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <h3 class="faculty-title">ENTENDIMIENTO</h3>
+                        <p>Espontaneidad activa</p>
+                        <p>12 Categorías puras:</p>
+                        <p><strong>Unidad, Realidad, Negación, Limitación...</strong></p>
+                        <p>Conceptos a priori</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <h3 class="faculty-title">RAZÓN</h3>
+                        <p>Facultad de las ideas</p>
+                        <p>Ideas regulativas:</p>
+                        <p><strong>Alma, Mundo, Dios</strong></p>
+                        <p>Límites del conocimiento</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mundos Fenomenal y Noumenal -->
+            <div class="section">
+                <h2 class="section-title">Los Dos Mundos</h2>
+                <div class="concepts-grid">
+                    <div class="concept-card phenomenal">
+                        <h3 class="concept-title">Mundo Fenomenal</h3>
+                        <p><strong>Lo que aparece</strong></p>
+                        <p>• Mundo de la experiencia posible</p>
+                        <p>• Estructurado por espacio y tiempo</p>
+                        <p>• Sometido a las categorías</p>
+                        <p>• Objeto de la ciencia</p>
+                        <p>• <em>Aquí SÍ hay conocimiento</em></p>
+                    </div>
+                    
+                    <div class="concept-card noumenal">
+                        <h3 class="concept-title">Mundo Noumenal</h3>
+                        <p><strong>La cosa en sí</strong></p>
+                        <p>• Realidad independiente</p>
+                        <p>• Más allá del espacio y tiempo</p>
+                        <p>• Incognoscible teóricamente</p>
+                        <p>• Fundamento de la moralidad</p>
+                        <p>• <em>Aquí NO hay conocimiento</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Límites del Conocimiento -->
+            <div class="section">
+                <div class="limits-section">
+                    <h2 class="limits-title">Los Límites del Conocimiento Humano</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: center; color: #2c3e50;">
+                        Kant demuestra que <strong>no podemos conocer las cosas en sí mismas</strong>, 
+                        solo los fenómenos tal como aparecen a nuestra conciencia. 
+                        Esto limita la razón especulativa pero <strong>hace lugar para la fe</strong> 
+                        y la razón práctica (moral).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cita célebre -->
+            <div class="section">
+                <div class="quote-section">
+                    <div class="quote">
+                        "Tuve que limitar el saber para hacer lugar a la fe"
+                    </div>
+                    <div class="quote-author">— Immanuel Kant</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Filosofía Crítica • Crítica de la Razón Pura (1781) • Epistemología Trascendental</p>
+        </div>
+    </div>
+</body>
+</html>
