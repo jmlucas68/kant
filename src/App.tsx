@@ -751,6 +751,12 @@ function App() {
                   <h4 className="font-semibold text-teal-900 mb-2">North American Kant Society</h4>
                   <p className="text-teal-800 text-sm">Recursos y conferencias sobre filosofía kantiana</p>
                 </div>
+                
+                <div className="p-4 bg-sky-50 rounded-lg border border-sky-200">
+                  <h4 className="font-semibold text-sky-900 mb-2">Portal sobre Kant</h4>
+                  <p className="text-sky-800 text-sm">Recursos y conferencias sobre filosofía kantiana</p>
+                  <a href="https://proyectoafri.es/hffia/04kant/04kant_index.htm" target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:text-sky-800 transition-colors">Visitar</a>
+                </div>
               </div>
             </div>
           </div>
