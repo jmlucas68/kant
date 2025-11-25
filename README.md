@@ -24,7 +24,7 @@ La página web incluye las siguientes secciones:
 
 ### 3. **Principales Obras con Enlaces Gratuitos**
 - **Crítica de la Razón Pura** - [Archive.org](https://archive.org/details/immanuel-kant-critica-de-la-razon-pura-edicion-bilingue-espanol-aleman-fondo-de-)
-- **Crítica de la Razón Práctica** - [Wikisource](https://es.wikisource.org/wiki/Crítica_de_la_razón_práctica)
+- **Crítica de la Razón Práctica** - [Wikisource](https://archive.org/details/crticadelaraznpr0000kant)
 - **Fundamentación de la Metafísica de las Costumbres** - [Wikisource](https://es.wikisource.org/wiki/Fundamentación_para_la_metafísica_de_las_costumbres)
 - **Crítica del Juicio** - [Biblioteca Cervantes](https://www.cervantesvirtual.com/obra-visor/critica-del-juicio-seguida-de-las-observaciones-sobre-el-asentimiento-de-lo-bello-y-lo-sublime--0/html/)
 - **La Paz Perpetua** - [Wikisource](https://es.wikisource.org/wiki/La_paz_perpetua)

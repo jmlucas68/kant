@@ -40,3 +40,11 @@ lerna-debug.log*
 /.vs/kant/CopilotIndices/17.14.734.62261/SemanticSymbols.db-wal
 /.vs/slnx.sqlite
 *.vsidx
+commit_message.txt
+.vs/VSWorkspaceState.json
+.vs/kant/config/applicationhost.config
+.gitignore
+.vs/kant/copilot-chat/87f3a3c7/sessions/bc180887-c467-40ed-91bd-48aecfe40f40
+.vs/kant/v17/.wsuo
+.gitignore
+.vs/kant/v17/DocumentLayout.json
