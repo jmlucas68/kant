@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crítica de la Razón Pura - Immanuel Kant</title>
+    <style>
+        :root {
+            --color-primary: #1a5490;
+            --color-secondary: #2c7ac5;
+            --color-accent: #e8b339;
+            --color-dark: #1a1a2e;
+            --color-light: #f5f5f5;
+            --color-white: #ffffff;
+            --color-text: #333;
+            --color-border: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            color: var(--color-white);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            font-style: italic;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            background: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .tab-btn.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            transform: scale(1.05);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h3 {
+            color: var(--color-primary);
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--color-accent);
+            padding-bottom: 10px;
+        }
+
+        h4 {
+            color: var(--color-secondary);
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border-left: 5px solid var(--color-accent);
+            padding: 25px;
+            margin: 25px 0;
+            font-style: italic;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .quote p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--color-dark);
+        }
+
+        .quote cite {
+            display: block;
+            text-align: right;
+            font-size: 0.9em;
+            color: var(--color-secondary);
+            margin-top: 15px;
+        }
+
+        .diagram-container {
+            background: var(--color-white);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            overflow-x: auto;
+        }
+
+        .structure-box {
+            border: 3px solid var(--color-primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .structure-box:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+
+        .structure-box h5 {
+            color: var(--color-primary);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            color: var(--color-white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .category-card h6 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 10px;
+        }
+
+        .category-card ul {
+            list-style: none;
+        }
+
+        .category-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .category-card li:last-child {
+            border-bottom: none;
+        }
+
+        .mind-map {
+            position: relative;
+            padding: 50px;
+            min-height: 600px;
+        }
+
+        .central-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: var(--color-dark);
+            padding: 30px 40px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.3em;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            z-index: 10;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .branch-node {
+            position: absolute;
+            background: var(--color-white);
+            border: 3px solid var(--color-primary);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .branch-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-color: var(--color-accent);
+        }
+
+        .node1 { top: 10%; left: 50%; transform: translateX(-50%); }
+        .node2 { top: 50%; left: 5%; }
+        .node3 { top: 50%; right: 5%; }
+        .node4 { bottom: 10%; left: 20%; }
+        .node5 { bottom: 10%; right: 20%; }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-white);
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        .comparison-table td {
+            padding: 18px;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-white);
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background: #f9f9f9;
+        }
+
+        .comparison-table tr:hover td {
+            background: #e8f4ff;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-left: 5px solid #e17055;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .info-box strong {
+            color: #d63031;
+            font-size: 1.2em;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            padding: 0 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            transform: translateX(-50%);
+            border: 4px solid var(--color-white);
+            box-shadow: 0 0 0 4px var(--color-primary);
+        }
+
+        .timeline-content {
+            background: var(--color-white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .links-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: var(--color-white);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .link-card h5 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--color-accent);
+        }
+
+        footer {
+            background: rgba(26, 26, 46, 0.95);
+            color: var(--color-white);
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 15px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .tab-content {
+                padding: 20px;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 60px !important;
+            }
+
+            .mind-map {
+                display: none;
+            }
+
+            .node1, .node2, .node3, .node4, .node5 {
+                position: static;
+                transform: none;
+                margin: 20px 0;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .scroll-top.visible {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CRÍTICA DE LA RAZÓN PURA</h1>
+            <h2>Immanuel Kant (1781 - 1787)</h2>
+            <p>Una Revolución Copernicana en la Filosofía</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'introduccion')">Introducción</button>
+            <button class="tab-btn" onclick="openTab(event, 'estructura')">Estructura</button>
+            <button class="tab-btn" onclick="openTab(event, 'conceptos')">Conceptos Clave</button>
+            <button class="tab-btn" onclick="openTab(event, 'juicios')">Juicios</button>
+            <button class="tab-btn" onclick="openTab(event, 'categorias')">Categorías</button>
+            <button class="tab-btn" onclick="openTab(event, 'textos')">Textos Seleccionados</button>
+            <button class="tab-btn" onclick="openTab(event, 'mapamental')">Mapa Mental</button>
+            <button class="tab-btn" onclick="openTab(event, 'recursos')">Recursos</button>
+        </nav>
+
+        <!-- TAB 1: INTRODUCCIÓN -->
+        <div id="introduccion" class="tab-content active">
+            <h3>📚 Introducción a la Crítica de la Razón Pura</h3>
+            
+            <div class="quote">
+                <p>"Pensamientos sin contenidos son vacíos; las intuiciones sin conceptos son ciegas."</p>
+                <cite>— Immanuel Kant, Crítica de la Razón Pura (A51 / B75)</cite>
+            </div>
+
+            <h4>Contexto y Significado</h4>
+            <p>La <strong>Crítica de la Razón Pura</strong> (Kritik der reinen Vernunft), publicada en 1781 con una segunda edición revisada en 1787, es la obra fundamental de Immanuel Kant y uno de los textos más influyentes en la historia de la filosofía occidental. En ella, Kant realiza lo que él mismo denomina una <strong>"revolución copernicana"</strong> en filosofía.</p>
+
+            <div class="info-box">
+                <strong>La Revolución Copernicana Kantiana:</strong> Así como Copérnico cambió la perspectiva astronómica haciendo que la Tierra girara alrededor del Sol, Kant invierte la relación tradicional entre sujeto y objeto: no es el sujeto quien gira alrededor del objeto para conocerlo, sino que el objeto debe conformarse a las estructuras cognitivas del sujeto.
+            </div>
+
+            <h4>Objetivo Principal</h4>
+            <p>Kant se propone responder a tres preguntas fundamentales:</p>
+            <ul style="margin-left: 40px; margin-top: 20px;">
+                <li><strong>¿Qué puedo conocer?</strong> (Filosofía teórica)</li>
+                <li><strong>¿Qué debo hacer?</strong> (Filosofía práctica)</li>
+                <li><strong>¿Qué me está permitido esperar?</strong> (Filosofía de la religión)</li>
+            </ul>
+            <p style="margin-top: 20px;">La Crítica de la Razón Pura se dedica específicamente a la primera pregunta, estableciendo los límites y posibilidades del conocimiento humano.</p>
+
+            <h4>El Problema Central</h4>
+            <p>Kant busca superar el debate entre <strong>racionalismo</strong> (que sostiene que el conocimiento proviene de la razón) y <strong>empirismo</strong> (que afirma que todo conocimiento deriva de la experiencia). Su solución: <strong>el conocimiento requiere tanto de la razón como de la experiencia</strong>, pero el sujeto cognoscente impone estructuras a priori que hacen posible la experiencia.</p>
+
+            <div class="diagram-container">
+                <h4 style="text-align: center; color: var(--color-primary);">🔄 Síntesis Kantiana</h4>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Racionalismo</th>
+                        <th>Kant (Idealismo Trascendental)</th>
+                        <th>Empirismo</th>
+                    </tr>
+                    <tr>
+                        <td>La razón como fuente del conocimiento</td>
+                        <td><strong>Síntesis:</strong> Razón + Experiencia</td>
+                        <td>La experiencia como fuente del conocimiento</td>
+                    </tr>
+                    <tr>
+                        <td>Descartes, Spinoza, Leibniz</td>
+                        <td><strong>Kant</strong> (giro copernicano)</td>
+                        <td>Locke, Berkeley, Hume</td>
+                    </tr>
+                    <tr>
+                        <td>Ideas innatas</td>
+                        <td><strong>Formas a priori</strong> de la sensibilidad y el entendimiento</td>
+                        <td>Tabula rasa (mente en blanco)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h4>El Idealismo Trascendental</h4>
+            <p>Kant denomina su sistema filosófico <strong>Idealismo Trascendental</strong>. "Trascendental" no significa "más allá de la experiencia", sino que se refiere a las <strong>condiciones de posibilidad de la experiencia</strong>. Kant distingue entre:</p>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <h6>🌟 FENÓMENO</h6>
+                    <p>Las cosas tal como se nos aparecen, conformadas por nuestras estructuras cognitivas a priori (espacio, tiempo, categorías).</p>
+                    <p style="margin-top: 10px;"><strong>✓ Cognoscible</strong></p>
+                </div>
+                <div class="category-card">
+                    <h6>❓ NOÚMENO</h6>
+                    <p>La cosa en sí (Ding an sich), independiente de nuestra forma de conocer. El objeto tal como es en su realidad última.</p>
+                    <p style="margin-top: 10px;"><strong>✗ Incognoscible</strong></p>
+                </div>
+            </div>
+
+            <p><strong>Conclusión fundamental:</strong> Solo podemos conocer los fenómenos (lo que se nos aparece), nunca los noúmenos (las cosas en sí). El conocimiento humano está limitado al ámbito de la experiencia posible.</p>
+        </div>
+
+        <!-- TAB 2: ESTRUCTURA -->
+        <div id="estructura" class="tab-content">
+            <h3>🏛️ Estructura de la Crítica de la Razón Pura</h3>
+
+            <p>La obra se divide en dos grandes doctrinas principales:</p>
+
+            <div class="structure-box" style="background: linear-gradient(135deg, #a8e6cf, #dcedc8);">
+                <h5>📖 I. DOCTRINA TRASCENDENTAL DE LOS ELEMENTOS</h5>
+                <p>Analiza los elementos que constituyen el conocimiento a priori</p>
+            </div>
+
+            <div class="structure-box" style="margin-left: 40px;">
+                <h5>🎨 1. ESTÉTICA TRASCENDENTAL</h5>
+                <p><strong>Facultad:</strong> Sensibilidad</p>
+                <p><strong>Formas a priori:</strong> Espacio y Tiempo</p>
+                <p><strong>Contenido:</strong> Analiza cómo recibimos las impresiones sensibles. Kant demuestra que el espacio y el tiempo no son propiedades de las cosas en sí, sino formas puras a priori de nuestra sensibilidad, condiciones necesarias para toda experiencia sensible.</p>
+                <ul style="margin-top: 15px; margin-left: 20px;">
+                    <li><strong>Espacio:</strong> Forma del sentido externo (geometría)</li>
+                    <li><strong>Tiempo:</strong> Forma del sentido interno (aritmética)</li>
+                </ul>
+            </div>
+
+            <div class="structure-box" style="margin-left: 40px;">
+                <h5>🧠 2. LÓGICA TRASCENDENTAL</h5>
+                <p><strong>Facultad:</strong> Entendimiento y Razón</p>
+                <p>Se divide en dos partes:</p>
+            </div>
+
+            <div class="structure-box" style="margin-left: 80px; background: linear-gradient(135deg, #ffd3b6, #ffaaa5);">
+                <h5>✓ A. ANALÍTICA TRASCENDENTAL</h5>
+                <p><strong>Facultad:</strong> Entendimiento</p>
+                <p><strong>Contenido:</strong> "Lógica de la verdad" - Analiza los conceptos puros del entendimiento (categorías).</p>
+                
+                <h6 style="margin-top: 20px; color: var(--color-primary);">Subdivisiones:</h6>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Analítica de los Conceptos:</strong> Deducción metafísica y trascendental de las categorías. Establece las 12 categorías fundamentales del entendimiento.</li>
+                    <li><strong>Analítica de los Principios:</strong> 
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Esquematismo trascendental (mediación entre categorías y fenómenos)</li>
+                            <li>Sistema de principios del entendimiento puro</li>
+                            <li>Distinción entre fenómenos y noúmenos</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="structure-box" style="margin-left: 80px; background: linear-gradient(135deg, #ff9a9e, #fecfef);">
+                <h5>✗ B. DIALÉCTICA TRASCENDENTAL</h5>
+                <p><strong>Facultad:</strong> Razón</p>
+                <p><strong>Contenido:</strong> "Lógica de la ilusión" - Critica los usos ilegítimos de la razón cuando intenta conocer más allá de la experiencia posible.</p>
+                
+                <h6 style="margin-top: 20px; color: var(--color-primary);">Ideas de la Razón Pura:</h6>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>ALMA</strong> (Idea Psicológica) → Paralogismos de la razón pura
+                        <br><em>Crítica a la psicología racional</em>
+                    </li>
+                    <li><strong>MUNDO</strong> (Idea Cosmológica) → Antinomias de la razón pura
+                        <br><em>Crítica a la cosmología racional - contradicciones aparentes</em>
+                    </li>
+                    <li><strong>DIOS</strong> (Idea Teológica) → Ideal de la razón pura
+                        <br><em>Crítica a la teología natural - refutación de las pruebas de la existencia de Dios</em>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Conclusión:</strong> Estas ideas no pueden ser objeto de conocimiento teórico, pero tienen un uso regulativo (orientan la investigación) y son postulados de la razón práctica.</p>
+            </div>
+
+            <div class="structure-box" style="background: linear-gradient(135deg, #a8edea, #fed6e3); margin-top: 30px;">
+                <h5>🔧 II. DOCTRINA TRASCENDENTAL DEL MÉTODO</h5>
+                <p>Establece las condiciones formales de un sistema completo de la razón pura</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li><strong>Disciplina de la razón pura:</strong> Limitación de su uso</li>
+                    <li><strong>Canon de la razón pura:</strong> Principios del uso práctico</li>
+                    <li><strong>Arquitectónica de la razón pura:</strong> Sistema del conocimiento</li>
+                    <li><strong>Historia de la razón pura:</strong> Desarrollo histórico</li>
+                </ul>
+            </div>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <strong>💡 Nota importante:</strong> Kant revisó significativamente algunas secciones en la segunda edición (1787), especialmente la "Deducción Trascendental de las Categorías" en la Analítica, reescribiéndola completamente para mayor claridad.
+            </div>
+        </div>
+
+        <!-- TAB 3: CONCEPTOS CLAVE -->
+        <div id="conceptos" class="tab-content">
+            <h3>🔑 Conceptos Clave</h3>
+
+            <div class="structure-box">
+                <h5>1. A PRIORI vs A POSTERIORI</h5>
+                <table class="comparison-table">
+                    <tr>
+                        <th>A PRIORI</th>
+                        <th>A POSTERIORI</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Independiente de la experiencia</strong></td>
+                        <td><strong>Dependiente de la experiencia</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Universal y necesario</td>
+                        <td>Particular y contingente</td>
+                    </tr>
+                    <tr>
+                        <td>Ej: "Todos los triángulos tienen tres lados"</td>
+                        <td>Ej: "Este cisne es blanco"</td>
+                    </tr>
+                    <tr>
+                        <td>Las matemáticas, la lógica, las formas de espacio y tiempo</td>
+                        <td>Conocimiento empírico, científico experimental</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="structure-box">
+                <h5>2. SENSIBILIDAD vs ENTENDIMIENTO vs RAZÓN</h5>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <h6>👁️ SENSIBILIDAD</h6>
+                        <p><strong>Función:</strong> Receptividad pasiva</p>
+                        <p><strong>Proporciona:</strong> Intuiciones (percepciones)</p>
+                        <p><strong>Formas a priori:</strong> Espacio y Tiempo</p>
+                        <p><strong>Resultado:</strong> Fenómenos dados en la experiencia</p>
+                    </div>
+                    <div class="category-card">
+                        <h6>🧠 ENTENDIMIENTO</h6>
+                        <p><strong>Función:</strong> Espontaneidad activa</p>
+                        <p><strong>Proporciona:</strong> Conceptos</p>
+                        <p><strong>Formas a priori:</strong> 12 Categorías</p>
+                        <p><strong>Resultado:</strong> Fenómenos pensados, experiencia organizada</p>
+                    </div>
+                    <div class="category-card">
+                        <h6>💭 RAZÓN</h6>
+                        <p><strong>Función:</strong> Búsqueda de lo incondicionado</p>
+                        <p><strong>Proporciona:</strong> Ideas</p>
+                        <p><strong>Ideas:</strong> Alma, Mundo, Dios</p>
+                        <p><strong>Resultado:</strong> Uso regulativo (no constitutivo)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-box">
+                <h5>3. INTUICIÓN vs CONCEPTO</h5>
+                <div class="quote">
+                    <p>"Las intuiciones sin conceptos son ciegas; los conceptos sin intuiciones son vacíos."</p>
+                    <cite>— Kant, CRP A51 / B75</cite>
+                </div>
+                <table class="comparison-table">
+                    <tr>
+                        <th>INTUICIÓN</th>
+                        <th>CONCEPTO</th>
+                    </tr>
+                    <tr>
+                        <td>Representación singular e inmediata</td>
+                        <td>Representación general y mediata</td>
+                    </tr>
+                    <tr>
+                        <td>Relación directa con el objeto</td>
+                        <td>Relación indirecta (mediante notas comunes)</td>
+                    </tr>
+                    <tr>
+                        <td>Producto de la sensibilidad</td>
+                        <td>Producto del entendimiento</td>
+                    </tr>
+                    <tr>
+                        <td>Ej: Esta rosa roja ante mí</td>
+                        <td>Ej: El concepto "rosa" o "rojo"</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 20px;"><strong>Conclusión:</strong> El conocimiento requiere la cooperación de ambas facultades. Sin intuiciones, los conceptos están vacíos (no se refieren a nada real). Sin conceptos, las intuiciones son ciegas (no pueden ser comprendidas).</p>
+            </div>
+
+            <div class="structure-box">
+                <h5>4. FENÓMENO vs NOÚMENO</h5>
+                <table class="comparison-table">
+                    <tr>
+                        <th>FENÓMENO (Phaenomenon)</th>
+                        <th>NOÚMENO (Noumenon)</th>
+                    </tr>
+                    <tr>
+                        <td>Lo que se nos aparece</td>
+                        <td>La cosa en sí (Ding an sich)</td>
+                    </tr>
+                    <tr>
+                        <td>Conformado por nuestras formas a priori</td>
+                        <td>Independiente de nuestras formas de conocer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>COGNOSCIBLE</strong> - objeto de experiencia posible</td>
+                        <td><strong>INCOGNOSCIBLE</strong> - fuera de la experiencia posible</td>
+                    </tr>
+                    <tr>
+                        <td>Espacio-temporal, categorizado</td>
+                        <td>No espacio-temporal, no categorizable</td>
+                    </tr>
+                    <tr>
+                        <td>Ámbito de la ciencia</td>
+                        <td>Concepto límite (negativo)</td>
+                    </tr>
+                </table>
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong>Noúmeno en sentido negativo:</strong> Concebible como límite de nuestro conocimiento sensible.
+                    <br><strong>Noúmeno en sentido positivo:</strong> Objeto de una intuición intelectual (que no poseemos).
+                </div>
+            </div>
+
+            <div class="structure-box">
+                <h5>5. DEDUCCIÓN TRASCENDENTAL</h5>
+                <p>Uno de los argumentos más complejos e importantes de la Crítica. Kant toma el término del ámbito jurídico ("deducción de derechos").</p>
+                <p style="margin-top: 15px;"><strong>Objetivo:</strong> Demostrar la validez objetiva de las categorías, es decir, justificar su aplicación legítima a los objetos de la experiencia.</p>
+                <p style="margin-top: 15px;"><strong>Estrategia:</strong> Probar que las categorías son condiciones de posibilidad de la experiencia misma. Sin ellas, no habría experiencia coherente.</p>
+                <p style="margin-top: 15px;"><strong>Punto clave:</strong> La <em>unidad sintética de la apercepción</em> (el "yo pienso" que acompaña todas mis representaciones) es la condición suprema de todo conocimiento y fundamenta la aplicación de las categorías.</p>
+            </div>
+
+            <div class="structure-box">
+                <h5>6. ESQUEMATISMO TRASCENDENTAL</h5>
+                <p>Problema: ¿Cómo pueden las categorías puras del entendimiento (conceptos abstractos) aplicarse a las intuiciones sensibles (concretas)?</p>
+                <p style="margin-top: 15px;"><strong>Solución:</strong> Los <em>esquemas trascendentales</em> - determinaciones temporales a priori que median entre categorías y fenómenos.</p>
+                <p style="margin-top: 15px;"><strong>Ejemplo:</strong> El esquema de la categoría de <em>causalidad</em> es la <em>sucesión regular en el tiempo</em>. Así, percibimos relaciones causales como sucesiones temporales necesarias.</p>
+            </div>
+        </div>
+
+        <!-- TAB 4: JUICIOS -->
+        <div id="juicios" class="tab-content">
+            <h3>⚖️ Teoría de los Juicios</h3>
+
+            <div class="info-box">
+                <strong>Pregunta fundamental de Kant:</strong> ¿Cómo son posibles los juicios sintéticos a priori?
+            </div>
+
+            <h4>Clasificación de los Juicios</h4>
+
+            <div class="structure-box">
+                <h5>SEGÚN SU CONTENIDO (¿Amplían el conocimiento?)</h5>
+                
+                <div class="category-grid">
+                    <div class="category-card">
+                        <h6>📊 JUICIOS ANALÍTICOS</h6>
+                        <p><strong>Definición:</strong> El predicado está contenido en el sujeto</p>
+                        <p><strong>Carácter:</strong> No amplían el conocimiento (son explicativos)</p>
+                        <p><strong>Fundamento:</strong> Principio de no contradicción</p>
+                        <p><strong>Ejemplo:</strong> "Todos los solteros son no casados"</p>
+                        <p><strong>Verdad:</strong> Evidente por análisis del concepto</p>
+                    </div>
+                    <div class="category-card">
+                        <h6>📈 JUICIOS SINTÉTICOS</h6>
+                        <p><strong>Definición:</strong> El predicado NO está contenido en el sujeto</p>
+                        <p><strong>Carácter:</strong> Amplían el conocimiento (son extensivos)</p>
+                        <p><strong>Fundamento:</strong> Requieren algo más que el sujeto</p>
+                        <p><strong>Ejemplo:</strong> "Todos los cuerpos son pesados"</p>
+                        <p><strong>Verdad:</strong> No evidente solo por análisis</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-box">
+                <h5>SEGÚN SU ORIGEN (¿De dónde proviene su verdad?)</h5>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>A PRIORI</th>
+                        <th>A POSTERIORI</th>
+                    </tr>
+                    <tr>
+                        <td>Independientes de la experiencia</td>
+                        <td>Dependientes de la experiencia</td>
+                    </tr>
+                    <tr>
+                        <td>Universales y necesarios</td>
+                        <td>Particulares y contingentes</td>
+                    </tr>
+                    <tr>
+                        <td>"Siempre" y "necesariamente"</td>
+                        <td>"Hasta ahora" y "probablemente"</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="diagram-container">
+                <h4 style="text-align: center; color: var(--color-primary);">🎯 Combinación de Criterios: Tipos de Juicios</h4>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Ejemplo</th>
+                        <th>Características</th>
+                        <th>Validez</th>
+                    </tr>
+                    <tr style="background: #e8f5e9;">
+                        <td><strong>ANALÍTICO A PRIORI</strong></td>
+                        <td>"El triángulo tiene tres lados"</td>
+                        <td>No amplía conocimiento<br>Independiente de experiencia</td>
+                        <td>✓ Tautologías, definiciones</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td><strong>SINTÉTICO A POSTERIORI</strong></td>
+                        <td>"La mesa es marrón"</td>
+                        <td>Amplía conocimiento<br>Depende de experiencia</td>
+                        <td>✓ Conocimiento empírico ordinario</td>
+                    </tr>
+                    <tr style="background: #e1bee7;">
+                        <td><strong>ANALÍTICO A POSTERIORI</strong></td>
+                        <td>—</td>
+                        <td colspan="2">❌ <strong>IMPOSIBLE</strong> (contradicción conceptual)</td>
+                    </tr>
+                    <tr style="background: #b3e5fc;">
+                        <td><strong>⭐ SINTÉTICO A PRIORI</strong></td>
+                        <td>"7 + 5 = 12"<br>"La línea recta es la distancia más corta entre dos puntos"<br>"Todo lo que sucede tiene una causa"</td>
+                        <td>✓ Amplía conocimiento<br>✓ Independiente de experiencia<br>✓ Universal y necesario</td>
+                        <td>✓ <strong>Fundamento de la ciencia</strong><br>(Matemáticas, Física, Metafísica posible)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="structure-box" style="background: linear-gradient(135deg, #667eea30, #764ba230);">
+                <h5>⭐ LOS JUICIOS SINTÉTICOS A PRIORI: El Descubrimiento de Kant</h5>
+                
+                <div class="quote">
+                    <p>"El verdadero problema de la razón pura está contenido en la pregunta: ¿Cómo son posibles los juicios sintéticos a priori?"</p>
+                    <cite>— Kant, CRP B19</cite>
+                </div>
+
+                <h6 style="color: var(--color-primary); margin-top: 25px;">¿Por qué son importantes?</h6>
+                <ul style="margin-left: 30px; margin-top: 15px;">
+                    <li><strong>Amplían nuestro conocimiento</strong> (son sintéticos)</li>
+                    <li><strong>Son universales y necesarios</strong> (son a priori)</li>
+                    <li><strong>Hacen posible la ciencia</strong> (matemáticas, física)</li>
+                    <li><strong>No dependen de la experiencia particular</strong> pero se aplican a ella</li>
+                </ul>
+
+                <h6 style="color: var(--color-primary); margin-top: 25px;">Ejemplos Detallados:</h6>
+                
+                <div class="structure-box" style="margin: 20px 0; background: white;">
+                    <strong>Matemáticas: "7 + 5 = 12"</strong>
+                    <p style="margin-top: 10px;">• <strong>Sintético:</strong> El concepto "12" no está contenido en "7 + 5". Debo realizar una operación de síntesis.</p>
+                    <p>• <strong>A priori:</strong> No necesito experiencia empírica para saberlo. Es universal y necesario.</p>
+                </div>
+
+                <div class="structure-box" style="margin: 20px 0; background: white;">
+                    <strong>Geometría: "La línea recta es la distancia más corta entre dos puntos"</strong>
+                    <p style="margin-top: 10px;">• <strong>Sintético:</strong> "Más corta" no está contenido en "recta".</p>
+                    <p>• <strong>A priori:</strong> Se basa en la intuición pura del espacio, no en mediciones empíricas.</p>
+                </div>
+
+                <div class="structure-box" style="margin: 20px 0; background: white;">
+                    <strong>Física: "Todo lo que sucede tiene una causa"</strong>
+                    <p style="margin-top: 10px;">• <strong>Sintético:</strong> El concepto "causa" no está contenido en "suceder".</p>
+                    <p>• <strong>A priori:</strong> Es una categoría del entendimiento aplicada universalmente, no derivada de casos particulares.</p>
+                </div>
+
+                <h6 style="color: var(--color-primary); margin-top: 25px;">¿Cómo son posibles?</h6>
+                <p style="margin-top: 15px;"><strong>Respuesta de Kant:</strong></p>
+                <ul style="margin-left: 30px; margin-top: 10px;">
+                    <li><strong>En Matemáticas:</strong> Por las intuiciones puras a priori de espacio (geometría) y tiempo (aritmética)</li>
+                    <li><strong>En Física:</strong> Por la aplicación de las categorías del entendimiento a los fenómenos dados en espacio y tiempo</li>
+                    <li><strong>En Metafísica:</strong> NO son posibles cuando pretenden conocer más allá de la experiencia posible (alma, mundo, Dios como objetos teóricos)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>Conclusión Revolucionaria:</strong> Los juicios sintéticos a priori son posibles porque el sujeto cognoscente impone estructuras a priori (espacio, tiempo, categorías) a la experiencia. El conocimiento no se ajusta a los objetos, sino que los objetos (como fenómenos) se ajustan a nuestras formas de conocer.
+            </div>
+        </div>
+
+        <!-- TAB 5: CATEGORÍAS -->
+        <div id="categorias" class="tab-content">
+            <h3>🎯 Las 12 Categorías del Entendimiento</h3>
+
+            <div class="quote">
+                <p>"El entendimiento es, hablando en general, la facultad de los conocimientos. Estos consisten en la determinada relación de representaciones dadas a un objeto."</p>
+                <cite>— Kant, CRP A69 / B94</cite>
+            </div>
+
+            <div class="info-box">
+                <strong>¿Qué son las categorías?</strong> Son conceptos puros del entendimiento, estructuras a priori que el sujeto aplica a las intuiciones sensibles para organizar y comprender la experiencia. Sin ellas, no habría experiencia coherente ni conocimiento objetivo.
+            </div>
+
+            <h4>Deducción Metafísica vs Deducción Trascendental</h4>
+            <table class="comparison-table">
+                <tr>
+                    <th>Deducción Metafísica</th>
+                    <th>Deducción Trascendental</th>
+                </tr>
+                <tr>
+                    <td>Deriva las categorías de las formas lógicas del juicio</td>
+                    <td>Justifica la aplicación legítima de las categorías a la experiencia</td>
+                </tr>
+                <tr>
+                    <td>Muestra QUÉ son las categorías</td>
+                    <td>Demuestra POR QUÉ son válidas objetivamente</td>
+                </tr>
+                <tr>
+                    <td>Fundamenta su origen en la estructura lógica del pensamiento</td>
+                    <td>Prueba que son condiciones de posibilidad de la experiencia</td>
+                </tr>
+            </table>
+
+            <h4 style="margin-top: 40px;">Tabla Completa de las Categorías</h4>
+            <p>Kant establece 12 categorías organizadas en 4 grupos (según los 4 tipos de juicio en lógica):</p>
+
+            <div class="category-grid">
+                <div class="category-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <h6>1️⃣ CANTIDAD</h6>
+                    <p style="font-style: italic; margin-bottom: 15px;">Derivadas de los juicios cuantitativos</p>
+                    <ul>
+                        <li><strong>UNIDAD</strong><br>(Juicios singulares: "Este X es Y")</li>
+                        <li><strong>PLURALIDAD</strong><br>(Juicios particulares: "Algunos X son Y")</li>
+                        <li><strong>TOTALIDAD</strong><br>(Juicios universales: "Todos los X son Y")</li>
+                    </ul>
+                    <p style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.5); padding-top: 15px;">
+                        <strong>Aplicación:</strong> Permiten concebir objetos como unidades, conjuntos o totalidades.
+                    </p>
+                </div>
+
+                <div class="category-card" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                    <h6>2️⃣ CUALIDAD</h6>
+                    <p style="font-style: italic; margin-bottom: 15px;">Derivadas de los juicios cualitativos</p>
+                    <ul>
+                        <li><strong>REALIDAD</strong><br>(Juicios afirmativos: "X es Y")</li>
+                        <li><strong>NEGACIÓN</strong><br>(Juicios negativos: "X no es Y")</li>
+                        <li><strong>LIMITACIÓN</strong><br>(Juicios infinitos: "X es no-Y")</li>
+                    </ul>
+                    <p style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.5); padding-top: 15px;">
+                        <strong>Aplicación:</strong> Determinan si algo es real, irreal o una realidad limitada.
+                    </p>
+                </div>
+
+                <div class="category-card" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                    <h6>3️⃣ RELACIÓN</h6>
+                    <p style="font-style: italic; margin-bottom: 15px;">Derivadas de los juicios relacionales</p>
+                    <ul>
+                        <li><strong>SUSTANCIA y ACCIDENTE</strong><br>(Juicios categóricos: "X es Y")</li>
+                        <li><strong>CAUSA y EFECTO</strong><br>(Juicios hipotéticos: "Si X entonces Y")</li>
+                        <li><strong>COMUNIDAD</strong><br>(Acción recíproca)<br>(Juicios disyuntivos: "X es A o B o C")</li>
+                    </ul>
+                    <p style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.5); padding-top: 15px;">
+                        <strong>Aplicación:</strong> Organizan las relaciones entre fenómenos (permanencia, sucesión, simultaneidad).
+                    </p>
+                </div>
+
+                <div class="category-card" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                    <h6>4️⃣ MODALIDAD</h6>
+                    <p style="font-style: italic; margin-bottom: 15px;">Derivadas de los juicios modales</p>
+                    <ul>
+                        <li><strong>POSIBILIDAD / IMPOSIBILIDAD</strong><br>(Juicios problemáticos: "X puede ser Y")</li>
+                        <li><strong>EXISTENCIA / NO EXISTENCIA</strong><br>(Juicios asertóricos: "X es Y")</li>
+                        <li><strong>NECESIDAD / CONTINGENCIA</strong><br>(Juicios apodícticos: "X debe ser Y")</li>
+                    </ul>
+                    <p style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.5); padding-top: 15px;">
+                        <strong>Aplicación:</strong> Determinan el modo de ser de los objetos en relación con nuestro conocimiento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="structure-box" style="margin-top: 40px; background: linear-gradient(135deg, #ffeaa7, #fdcb6e);">
+                <h5>🔗 El Esquematismo: Puente entre Categorías y Fenómenos</h5>
+                <p><strong>Problema:</strong> Las categorías son conceptos puros, abstractos. Los fenómenos son sensibles, concretos. ¿Cómo pueden aplicarse las primeras a los segundos?</p>
+                <p style="margin-top: 15px;"><strong>Solución:</strong> Los <em>esquemas trascendentales</em>, determinaciones del tiempo a priori que median entre ambos.</p>
+                
+                <h6 style="color: #d63031; margin-top: 20px;">Ejemplos de Esquemas:</h6>
+                <ul style="margin-left: 30px; margin-top: 10px;">
+                    <li><strong>Sustancia:</strong> Permanencia en el tiempo</li>
+                    <li><strong>Causalidad:</strong> Sucesión regular en el tiempo</li>
+                    <li><strong>Comunidad:</strong> Simultaneidad según una ley universal</li>
+                    <li><strong>Realidad:</strong> Ser en un tiempo determinado</li>
+                    <li><strong>Necesidad:</strong> Existencia en todo tiempo</li>
+                </ul>
+            </div>
+
+            <div class="diagram-container">
+                <h4 style="text-align: center; color: var(--color-primary);">🎨 Ejemplo Concreto: La Categoría de Causalidad</h4>
+                
+                <div class="structure-box" style="background: white; margin-top: 20px;">
+                    <p><strong>1. Concepto puro (Categoría):</strong> Causa-Efecto (relación lógica abstracta)</p>
+                    <p style="margin-top: 15px;"><strong>2. Esquema trascendental:</strong> Sucesión regular y necesaria en el tiempo</p>
+                    <p style="margin-top: 15px;"><strong>3. Aplicación empírica:</strong> "El calor (causa) hace que el agua hierva (efecto)"</p>
+                    <p style="margin-top: 15px; padding: 15px; background: #e8f5e9; border-radius: 8px;">
+                        <strong>Resultado:</strong> Percibimos relaciones causales como sucesiones temporales necesarias. Sin la categoría de causalidad, solo veríamos eventos inconexos, no relaciones causales objetivas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Importancia Fundamental:</strong> Las categorías no derivan de la experiencia, sino que la hacen posible. Son las condiciones a priori que permiten transformar las impresiones sensibles caóticas en experiencia coherente y conocimiento objetivo. Este es el corazón del giro copernicano kantiano.
+            </div>
+        </div>
+
+        <!-- TAB 6: TEXTOS SELECCIONADOS -->
+        <div id="textos" class="tab-content">
+            <h3>📖 Textos Seleccionados de la Crítica de la Razón Pura</h3>
+
+            <div class="quote">
+                <p><strong>Sobre el Giro Copernicano:</strong></p>
+                <p>"Hasta ahora se admitía que todo nuestro conocimiento tenía que regirse por los objetos; pero todos los ensayos, para decidir a priori algo sobre estos mediante conceptos, por donde sería extendido nuestro conocimiento, aniquilábanse en esa suposición. Ensáyese pues una vez si no adelantaremos más en los problemas de la metafísica, admitiendo que los objetos tienen que regirse por nuestro conocimiento."</p>
+                <cite>— Prólogo a la Segunda Edición (B XVI)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>La Unión Necesaria de Sensibilidad y Entendimiento:</strong></p>
+                <p>"Sin la sensibilidad no nos sería dado objeto alguno, y sin el entendimiento ninguno sería pensado. Pensamientos sin contenido son vacíos; intuiciones sin conceptos son ciegas. Por eso es tan necesario hacer sensibles los conceptos (es decir, añadirles el objeto en la intuición) como hacer inteligibles las intuiciones (es decir, someterlas a conceptos)."</p>
+                <cite>— Lógica Trascendental, Introducción (A51 / B75)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>Sobre el Espacio como Forma A Priori:</strong></p>
+                <p>"El espacio no es un concepto empírico, extraído de experiencias externas. Pues para que ciertas sensaciones sean referidas a algo fuera de mí (es decir, a algo en otro lugar del espacio que aquel en que yo estoy) y asimismo para que yo pueda representármelas como fuera y junto a las otras, por tanto no sólo como distintas, sino como en distintos lugares, hace falta que esté ya a la base la representación del espacio."</p>
+                <cite>— Estética Trascendental (A23 / B38)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>El Tiempo como Forma del Sentido Interno:</strong></p>
+                <p>"El tiempo es la condición formal a priori de todos los fenómenos en general. El espacio, como forma pura de toda intuición externa, está limitado, como condición a priori, tan sólo a los fenómenos externos. Pero dado que, por el contrario, todas las representaciones, tengan o no por objeto cosas externas, pertenecen sin embargo, en sí mismas, como determinaciones del ánimo, al estado interno, y este estado interno está bajo la condición formal de la intuición interna y por tanto del tiempo; así el tiempo es una condición a priori de todo fenómeno en general."</p>
+                <cite>— Estética Trascendental (A34 / B50)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>La Unidad Sintética de la Apercepción:</strong></p>
+                <p>"El: Yo pienso tiene que poder acompañar todas mis representaciones; pues si no, sería representado en mí algo que no podría ser pensado, lo cual significa tanto como decir que la representación sería imposible o al menos, para mí, no sería nada. [...] Llamo a esa unidad, la unidad trascendental de la autoconciencia, para designar la posibilidad del conocimiento a priori desde ella."</p>
+                <cite>— Deducción Trascendental (B131-132)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>Sobre la Distinción Fenómeno-Noúmeno:</strong></p>
+                <p>"Si llamamos noúmeno a una cosa, en cuanto que no es objeto de nuestra intuición sensible, haciendo abstracción de nuestro modo de intuirla, entonces tenemos un noúmeno en sentido negativo. Pero si entendemos por noúmeno un objeto de una intuición no sensible, entonces admitimos un género particular de intuición, a saber, la intelectual, la cual no es, empero, la nuestra, y cuya posibilidad no podemos conocer; y ese sería el noúmeno en sentido positivo."</p>
+                <cite>— Analítica de los Principios (A252 / B307-308)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>Límites del Conocimiento Humano:</strong></p>
+                <p>"Hemos querido decir que toda nuestra intuición no es nada más que la representación del fenómeno; que las cosas que intuimos no son en sí mismas tal como las intuimos, ni sus relaciones son en sí mismas constituidas como se nos aparecen; y que si suprimiéramos nuestro sujeto o tan sólo la constitución subjetiva de los sentidos en general, desaparecería toda constitución, todas las relaciones de los objetos en el espacio y el tiempo, y aun el espacio y el tiempo mismos; pues todo esto, como fenómenos, no puede existir en sí, sino sólo en nosotros."</p>
+                <cite>— Estética Trascendental (A42 / B59)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>Sobre las Ideas de la Razón (Dios, Alma, Mundo):</strong></p>
+                <p>"Las ideas trascendentales no son, pues, nunca de uso constitutivo, de modo que mediante ellas se den conceptos de ciertos objetos. Y si se las entiende así, son conceptos simplemente sofísticos (dialécticos). En cambio tienen un uso regulativo excelente e imprescindiblemente necesario, a saber: el de dirigir el entendimiento hacia un cierto fin, en vista del cual convergen las líneas directrices de todas sus reglas en un punto."</p>
+                <cite>— Dialéctica Trascendental (A644 / B672)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>La Tarea de la Crítica:</strong></p>
+                <p>"La razón humana tiene el destino singular, en uno de sus campos de conocimiento, de hallarse acosada por cuestiones que no puede rechazar por ser planteadas por la misma naturaleza de la razón, pero a las que tampoco puede responder por sobrepasar todas sus facultades."</p>
+                <cite>— Prólogo a la Primera Edición (A VII)</cite>
+            </div>
+
+            <div class="quote">
+                <p><strong>El Propósito Final:</strong></p>
+                <p>"He tenido que suprimir el saber para dejar sitio a la fe."</p>
+                <cite>— Prólogo a la Segunda Edición (B XXX)</cite>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Nota:</strong> Estas citas ilustran los conceptos centrales de la Crítica de la Razón Pura. Kant escribió la obra en un estilo denso y técnico, pero estas selecciones capturan la esencia de su revolución filosófica: el conocimiento no copia pasivamente la realidad, sino que la constituye activamente mediante estructuras a priori.
+            </div>
+        </div>
+
+        <!-- TAB 7: MAPA MENTAL -->
+        <div id="mapamental" class="tab-content">
+            <h3>🧭 Mapa Mental: Crítica de la Razón Pura</h3>
+
+            <div class="diagram-container">
+                <div class="mind-map">
+                    <div class="central-node">
+                        CRÍTICA DE LA<br>RAZÓN PURA
+                    </div>
+                    
+                    <div class="branch-node node1" style="width: 300px;">
+                        <strong>PREGUNTA CENTRAL</strong><br>
+                        ¿Cómo son posibles los<br>
+                        juicios sintéticos a priori?<br>
+                        (Base de la ciencia)
+                    </div>
+                    
+                    <div class="branch-node node2" style="width: 280px;">
+                        <strong>SENSIBILIDAD</strong><br>
+                        • Intuiciones<br>
+                        • Formas a priori:<br>
+                        &nbsp;&nbsp;- Espacio (externo)<br>
+                        &nbsp;&nbsp;- Tiempo (interno)<br>
+                        • Estética Trascendental
+                    </div>
+                    
+                    <div class="branch-node node3" style="width: 280px;">
+                        <strong>ENTENDIMIENTO</strong><br>
+                        • Conceptos<br>
+                        • 12 Categorías a priori<br>
+                        • Analítica Trascendental<br>
+                        • Deducción Trascendental<br>
+                        • Esquematismo
+                    </div>
+                    
+                    <div class="branch-node node4" style="width: 260px;">
+                        <strong>RAZÓN</strong><br>
+                        • Ideas (Alma, Mundo, Dios)<br>
+                        • Dialéctica Trascendental<br>
+                        • Uso regulativo<br>
+                        (no constitutivo)
+                    </div>
+                    
+                    <div class="branch-node node5" style="width: 260px;">
+                        <strong>RESULTADO</strong><br>
+                        • Fenómeno (cognoscible)<br>
+                        • Noúmeno (incognoscible)<br>
+                        • Idealismo Trascendental<br>
+                        • Límites del conocimiento
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-box" style="margin-top: 40px;">
+                <h5>🔄 Flujo del Conocimiento según Kant</h5>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h6 style="color: var(--color-primary); font-size: 1.3em;">1. COSA EN SÍ (Noúmeno)</h6>
+                            <p>Realidad independiente → Incognoscible</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h6 style="color: var(--color-primary); font-size: 1.3em;">2. AFECCIÓN</h6>
+                            <p>La cosa en sí afecta nuestra sensibilidad</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h6 style="color: var(--color-primary); font-size: 1.3em;">3. SENSIBILIDAD</h6>
+                            <p>Formas a priori: ESPACIO y TIEMPO<br>
+                            Resultado: Intuiciones sensibles ordenadas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h6 style="color: var(--color-primary); font-size: 1.3em;">4. ENTENDIMIENTO</h6>
+                            <p>Aplica las 12 CATEGORÍAS<br>
+                            Síntesis mediante el esquematismo<br>
+                            Resultado: FENÓMENOS organizados</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h6 style="color: var(--color-primary); font-size: 1.3em;">5. RAZÓN</h6>
+                            <p>Busca unidad sistemática mediante IDEAS<br>
+                            (Uso regulativo: orienta la investigación)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h6 style="color: var(--color-primary); font-size: 1.3em;">6. CONOCIMIENTO OBJETIVO</h6>
+                            <p>Experiencia coherente<br>
+                            Ciencia posible<br>
+                            Limitada a fenómenos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagram-container" style="margin-top: 40px;">
+                <h4 style="text-align: center; color: var(--color-primary); margin-bottom: 30px;">📊 Cuadro Sinóptico Completo</h4>
+                
+                <div class="structure-box" style="background: #e3f2fd;">
+                    <h5>I. DOCTRINA TRASCENDENTAL DE LOS ELEMENTOS</h5>
+                    
+                    <div style="margin-left: 30px; margin-top: 20px;">
+                        <div class="structure-box" style="background: #fff9c4;">
+                            <strong>A. ESTÉTICA TRASCENDENTAL</strong>
+                            <p>→ Sensibilidad → Intuiciones</p>
+                            <p>→ Formas a priori: Espacio y Tiempo</p>
+                            <p>→ Posibilidad: Matemáticas (geometría y aritmética)</p>
+                        </div>
+                        
+                        <div class="structure-box" style="background: #f3e5f5; margin-top: 20px;">
+                            <strong>B. LÓGICA TRASCENDENTAL</strong>
+                            
+                            <div style="margin-left: 30px; margin-top: 15px;">
+                                <div class="structure-box" style="background: #c8e6c9;">
+                                    <strong>1. ANALÍTICA TRASCENDENTAL</strong><br>
+                                    <em>"Lógica de la verdad"</em>
+                                    <p style="margin-top: 10px;">→ Entendimiento → Conceptos</p>
+                                    <p>→ 12 Categorías (cantidad, cualidad, relación, modalidad)</p>
+                                    <p>→ Deducción trascendental</p>
+                                    <p>→ Esquematismo</p>
+                                    <p>→ Principios del entendimiento puro</p>
+                                    <p>→ Posibilidad: Física (ciencia natural)</p>
+                                </div>
+                                
+                                <div class="structure-box" style="background: #ffccbc; margin-top: 15px;">
+                                    <strong>2. DIALÉCTICA TRASCENDENTAL</strong><br>
+                                    <em>"Lógica de la ilusión"</em>
+                                    <p style="margin-top: 10px;">→ Razón → Ideas</p>
+                                    <p>→ Alma (Paralogismos)</p>
+                                    <p>→ Mundo (Antinomias)</p>
+                                    <p>→ Dios (Ideal de la razón)</p>
+                                    <p>→ Crítica de la metafísica dogmática</p>
+                                    <p>→ Imposibilidad: Metafísica como ciencia teórica</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-box" style="background: #e1f5fe; margin-top: 30px;">
+                    <h5>II. DOCTRINA TRASCENDENTAL DEL MÉTODO</h5>
+                    <p>→ Establece las reglas formales del sistema de la razón pura</p>
+                    <p>→ Disciplina, Canon, Arquitectónica e Historia de la razón</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 8: RECURSOS -->
+        <div id="recursos" class="tab-content">
+            <h3>📚 Recursos y Enlaces</h3>
+
+            <div class="links-section">
+                <h4>📖 Texto Completo de la Obra</h4>
+                <div class="links-grid">
+                    <a href="https://www.gutenberg.org/ebooks/39990" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>📘 Project Gutenberg</h5>
+                        <p>Crítica de la Razón Pura - Versión en español (traducción de Manuel García Morente)</p>
+                    </a>
+                    
+                    <a href="https://archive.org/search.php?query=kant%20critica%20razon%20pura%20español" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>📚 Archive.org</h5>
+                        <p>Múltiples ediciones digitalizadas de la Crítica de la Razón Pura en español</p>
+                    </a>
+                    
+                    <a href="https://www.amazon.es/s?k=critica+de+la+razon+pura+kant" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>🛒 Amazon España</h5>
+                        <p>Ediciones impresas y digitales disponibles para compra</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h4>🎓 Recursos Académicos</h4>
+                <div class="links-grid">
+                    <a href="https://es.wikipedia.org/wiki/Cr%C3%ADtica_de_la_raz%C3%B3n_pura" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>📖 Wikipedia</h5>
+                        <p>Artículo enciclopédico sobre la Crítica de la Razón Pura</p>
+                    </a>
+                    
+                    <a href="https://www.academia.edu/search?q=kant%20critica%20razon%20pura" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>🎓 Academia.edu</h5>
+                        <p>Artículos académicos y papers sobre la filosofía kantiana</p>
+                    </a>
+                    
+                    <a href="https://plato.stanford.edu/entries/kant/" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>📚 Stanford Encyclopedia</h5>
+                        <p>Entrada completa sobre Immanuel Kant (en inglés)</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h4>🔗 Sitios Especializados en Kant</h4>
+                <div class="links-grid">
+                    <a href="https://www.webdianoia.com/moderna/kant/kant_fil_conoc.htm" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>🌐 Webdianoia</h5>
+                        <p>Análisis del conocimiento en la Crítica de la Razón Pura</p>
+                    </a>
+                    
+                    <a href="https://www.filosofia.org/rev/bas/bas23501.htm" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>📝 Filosofía.org</h5>
+                        <p>Idealismo trascendental de Kant - Análisis por Gustavo Bueno</p>
+                    </a>
+                    
+                    <a href="https://ojs.uv.es/index.php/REK" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>📰 Revista de Estudios Kantianos</h5>
+                        <p>Publicación académica especializada en filosofía kantiana</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h4>🎥 Recursos Multimedia</h4>
+                <div class="links-grid">
+                    <a href="https://www.youtube.com/results?search_query=kant+critica+razon+pura+español" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>▶️ YouTube</h5>
+                        <p>Conferencias y explicaciones en video sobre la Crítica de la Razón Pura</p>
+                    </a>
+                    
+                    <a href="https://www.coursera.org/search?query=kant" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <h5>🎓 Coursera</h5>
+                        <p>Cursos online sobre filosofía kantiana</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <strong>📌 Ediciones Recomendadas en Español:</strong>
+                <ul style="margin-top: 15px; margin-left: 30px;">
+                    <li><strong>Traducción de Pedro Ribas</strong> (Alfaguara/Taurus) - Considerada una de las mejores traducciones al español</li>
+                    <li><strong>Traducción de Manuel García Morente y Manuel Fernández Núñez</strong> (Porrúa) - Traducción clásica</li>
+                    <li><strong>Traducción de Mario Caimi</strong> (Colihue/FCE) - Traducción moderna y rigurosa</li>
+                </ul>
+            </div>
+
+            <div class="quote" style="margin-top: 30px;">
+                <p><strong>Contexto Histórico y Filosófico</strong></p>
+                <p>La Crítica de la Razón Pura se inscribe en el contexto de la Ilustración del siglo XVIII. Kant (1724-1804) vivió toda su vida en Königsberg, Prusia Oriental. La obra es una respuesta tanto al racionalismo continental (Descartes, Leibniz) como al empirismo británico (Locke, Hume). Kant afirmaba haber sido "despertado de su sueño dogmático" por la lectura de Hume.</p>
+                <p style="margin-top: 15px;">La obra tuvo inicialmente poca recepción, pero pronto se convirtió en uno de los textos más influyentes de la filosofía occidental, dando origen al idealismo alemán (Fichte, Schelling, Hegel) y sentando las bases de gran parte de la filosofía contemporánea.</p>
+                <cite>— Contexto de la obra (1781-1787)</cite>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Crítica de la Razón Pura - Immanuel Kant</strong></p>
+            <p>Página educativa sobre una de las obras más importantes de la filosofía occidental</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                "Dos cosas llenan el ánimo de admiración y respeto, siempre nuevos y crecientes cuanto más reiterada y persistentemente se ocupa de ellas la reflexión: el cielo estrellado sobre mí y la ley moral en mí."<br>
+                <em>— Immanuel Kant, Crítica de la Razón Práctica</em>
+            </p>
+            <p style="margin-top: 20px;">© 2024 - Recurso educativo sin fines comerciales</p>
+        </footer>
+    </div>
+
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Función para cambiar de pestaña
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+            
+            // Scroll al inicio del contenido
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Botón scroll to top
+        window.addEventListener('scroll', function() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animación
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.structure-box, .category-card, .quote');
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
