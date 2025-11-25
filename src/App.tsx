@@ -402,6 +402,11 @@ function App() {
                           <h4 className="font-bold text-slate-900 text-lg leading-tight group-hover:text-blue-700 transition-colors">
                             {work.titulo}
                           </h4>
+                          {work.titulo === 'Crítica de la razón pura' && (
+                            <a href="critica_razon_pura.html" className="text-sm text-blue-600 hover:underline">
+                              ver un resumen de la obra
+                            </a>
+                          )}
                         </div>
                       </div>
                     ))}
